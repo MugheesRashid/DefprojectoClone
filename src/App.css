@@ -8,16 +8,25 @@ html{
 }
 
 body{
-    background-color: white;
+    background-color: #FFFBF2;;
     color: #000;
     font-family: "Schibsted Grotesk", sans-serif!important;
     width: 100vw;
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 .cursor{
     transition: all linear 0.2s;
     transition-delay: 0ms;
+    background-color: rgb(33, 33, 33);
+    height: 2.25rem;
+    width: 2.25rem;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 999;
+    opacity: 0;
 }
+
 .slide{
   animation: 37s slide infinite linear;
 }
@@ -36,6 +45,10 @@ body{
     }
   } 
 
+  .appear{
+    color: red!important;
+  }
+
   ::-webkit-scrollbar{
     width: 6px;
   }
@@ -45,4 +58,47 @@ body{
   }
   ::-webkit-scrollbar-thumb{
     background-color: black;
+  }
+  .text-box::-webkit-scrollbar{
+    display: none;
+  }
+
+  ::selection{
+    color: White;
+    background: rgb(33, 33, 33);
+  }
+
+  .btn::after{
+   right: 0;
+  }
+  .btn::before{
+    left: 0;
+  }
+  .btn::after,
+  .btn::before{
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 50%;
+    background: #FFFBF2;
+    z-index: 0;
+    rotate: 180deg;
+    transition: all .4s linear;
+  }
+  .btn:hover span{
+    background-color: #FFFBF2;
+  }
+  .btn:hover{
+    color: #FFFBF2;
+  }
+   .btn{
+    cursor: pointer;
+   }
+  
+  .btn:hover::after{
+    width: 0%;
+  }
+
+  .btn:hover::before{
+    width: 0%;
   }
